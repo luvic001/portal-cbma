@@ -41,6 +41,7 @@ define('MATERIAL_DESIGN', false);
 // Navigator Theme Color
 define('THEME_COLOR', '#fff');
 
+define('FONT_AWESOME', true);
 
 // Enable Ajax
 define('USE_AJAX', true);

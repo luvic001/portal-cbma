@@ -1,0 +1,55 @@
+.accordeon-cbma
+  .card
+    margin-bottom: 15px
+    border: 1px solid $amarelo
+    +border-radius(0)
+    padding: 0
+    .card-header
+      padding: 0
+      border: 0
+      background-color: $branco
+      h5
+        button
+          padding: 1rem
+          width: 100%
+          text-align: left
+          color: $verde
+          font-weight: 600
+          position: relative
+          +font-size(18px)
+          +breakpoint(sm)
+            +font-size(22px)
+          &:hover,
+          &:focus,
+          &:active
+            background-color: #f9f9f9
+            text-decoration: none
+          i
+            position: absolute
+            right: 15px
+            top: 0
+            +default_transition()
+            bottom: 0
+            margin: auto
+            +font-size(22px)
+            height: 24px
+            +breakpoint(sm)
+              +font-size(26px)
+              height: 28px
+          
+          &[aria-expanded="true"]
+            i
+              +transform(rotate(180deg))
+
+    .card-body
+      border-top: 1px solid $amarelo
+      background-color: #f4f6f5
+      line-height: 28px
+      +font-size(16px)
+      .list-into-accordeon
+        li
+          width: 100%
+          border-bottom: 1px solid #ddd
+          padding: 5px 0
+          &:last-child
+            border-bottom: 0

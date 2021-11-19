@@ -6,15 +6,23 @@
   align-items: center
   .webdoor-content
     h1
-      max-width: 460px
-      +font-size(44px)
-      line-height: 50px
       color: $branco
       font-weight: 700
-      margin-bottom: 20px
+      +font-size(32px)
+      line-height: 38px
+      margin-bottom: 15px
+      max-width: 360px
+      +breakpoint(sm)
+        max-width: 460px
+        margin-bottom: 20px
+        line-height: 50px
+        +font-size(44px)
     p
       margin-bottom: 35px
       max-width: 540px
-      +font-size(22px)
-      line-height: 32px
       color: $branco
+      line-height: 28px
+      +font-size(18px)
+      +breakpoint(sm)
+        line-height: 32px
+        +font-size(22px)
