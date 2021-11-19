@@ -1,0 +1,25 @@
+body.logged-in.admin-bar header.site-header,
+body.logged-in.admin-bar section.mega-menu,
+body.logged-in.admin-bar section.mega-menu .glass {
+  top: 43px !important;
+}
+body.logged-in.admin-bar.body-scrolled header.site-header, 
+body.logged-in.admin-bar.body-scrolled section.mega-menu,
+body.logged-in.admin-bar.body-scrolled section.mega-menu .glass {
+  top: 0 !important;
+}
+@media (min-width: 768px) {
+  body.logged-in.admin-bar header.site-header,
+  body.logged-in.admin-bar section.mega-menu,
+  body.logged-in.admin-bar section.mega-menu .glass {
+    top: 30px !important;
+  }
+  body.logged-in.admin-bar.body-scrolled header.site-header,
+  body.logged-in.admin-bar.body-scrolled section.mega-menu,
+  body.logged-in.admin-bar.body-scrolled section.mega-menu .glass {
+    top: 30px !important;
+  }
+  body.logged-in.admin-bar section.mega-menu {
+    height: calc(100vh - 30px);
+  }
+}
