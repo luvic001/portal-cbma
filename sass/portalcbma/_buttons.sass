@@ -11,3 +11,41 @@
     text-decoration: none
     color: $verde
     +filter(brightness(.9))
+
+.btn-link
+  display: inline-flex
+  align-items: center
+  span.arrow-btn-link
+    margin-left: 9px
+    margin-bottom: -2px
+  &:hover
+    text-decoration: none
+    span.arrow-btn-link
+      width: 30px
+
+span.arrow-btn-link
+  position: relative
+  width: 20px
+  height: 10px
+  display: inline-flex
+  align-items: center
+  +default_transition()
+  *
+    background-color: $preto
+  .base-x
+    width: 100%
+    height: 2px
+  .arrow-y
+    .top,
+    .bottom
+      height: 70%
+      width: 2px
+      right: 0
+      position: absolute
+
+    .top
+      +transform(rotate(-48deg))
+      top: 0px
+    .bottom
+      top: 3px
+      +transform(rotate(48deg))
