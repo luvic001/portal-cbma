@@ -1,0 +1,29 @@
+main.site-content
+  section.site-sections.section-redes-sociais
+    background-color: $verde
+    .section-title
+      h2
+        color: $branco
+        &:after
+          content: ''
+          position: relative
+          z-index: 1
+          margin: 2rem 0 2.5rem
+          background-color: $amarelo
+          width: 50px
+          height: 2px
+          display: block
+
+    ul.redes-sociais
+      display: flex
+      justify-content: space-between
+      max-width: 200px
+      li
+        a
+          &:hover
+            i
+              +opacity(1)
+          i
+            +default_transition()
+            color: $branco
+            +opacity(.6)

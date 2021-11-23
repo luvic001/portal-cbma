@@ -16,3 +16,6 @@ get_modules('Cursos', 'page/home');
 
 // Artigos
 get_modules('Artigos', 'page/home');
+
+// Artigos
+get_modules('Redes-sociais', 'page/home');
