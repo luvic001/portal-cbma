@@ -26,6 +26,8 @@ $sitename = get_bloginfo('name') . ' | ' . get_bloginfo('description');
   <script>var adm_ajax = '<?= admin_url('admin-ajax.php') ?>';</script>
   <script type="text/javascript" src="<?= $TEMPLATE_DIRECTORY_URI ?>/js/jQuery.min.js"></script>
   <script type="text/javascript" src="<?= $TEMPLATE_DIRECTORY_URI ?>/js/bootstrap.min.js" async defer></script>
+  <script type="text/javascript" src="<?= $TEMPLATE_DIRECTORY_URI ?>/js/splide.min.js" async defer></script>
+  <script type="text/javascript" src="<?= $TEMPLATE_DIRECTORY_URI ?>/js/splide-grid.min.js" async defer></script>
   <script type="text/javascript" src="<?= $TEMPLATE_DIRECTORY_URI ?>/js/script.min.js" async defer></script>
 	<?php if (FONT_AWESOME): ?>
     <script src="https://kit.fontawesome.com/c454b0919f.js" crossorigin="anonymous"></script>

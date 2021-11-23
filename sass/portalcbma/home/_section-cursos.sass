@@ -1,88 +1,74 @@
 section.site-sections.section-cursos
   background-color: $verde
   *
-    color: $branco
-
+    color: $branco !important
   a.btn-link
-    color: rgba($branco, .8)
+    +filter(brightness(.8))
+    +default_transition()
+    &:hover
+      +filter(brightness(1))
     span.arrow-btn-link
       *
         background-color: $amarelo
-  .carousel-cursos
-    .carousel-inner
-      .carousel-item
-        .cursos-content
-          +breakpoint(md)
-            padding: 0 0 0 2rem
-          .cursos-box
-            position: relative
-            border: 1px solid $amarelo
-            display: flex
-            padding: 1rem
-            +breakpoint(sm)
-              padding: 2rem
-            .cursos-date
-              border: 1px solid $amarelo
-              padding: 1.2rem 1rem
-              display: flex
-              justify-content: center
-              flex-direction: column
-              p
-                margin-bottom: 0
-                text-align: center
-                margin-bottom: 5px
-                &.date-day
-                  +font-size(32px)
-                  font-weight: 600
-                &.date-month
-                  +font-size(16px)
-                  font-weight: 600
-                &.date-year
-                  margin-bottom: 18px
-                  padding-bottom: 18px
-                  border-bottom: 1px solid $amarelo
-                &.date-time
-                  margin-bottom: 0
+      
+  .splide__arrows
+    position: relative
+    bottom: initial
+    margin-left: auto
+    margin-right: 0
+    margin-bottom: 45px
+    .splide__arrow
+      border-color: $amarelo
+      svg
+        fill: $amarelo
 
-            .cursos-content-text
-              padding-left: 1rem
-              +breakpoint(sm)
-                padding-left: 2rem
-              h3
-                +clamp(2)
-                +font-size(18px)
-                line-height: 30px
-                +breakpoint(sm)
-                  line-height: 32px
-                  +font-size(20px)
-              hr.line-separator
-                width: 50px
-                margin: 1rem 0
-                background-color: $amarelo
-              p
-                +clamp(3)
-
-
-    .carousel-controls
+  .cursos-content
+    +breakpoint(md)
+      padding: 0 0 0 2rem
+    .cursos-box
+      position: relative
+      border: 1px solid $amarelo
       display: flex
-      justify-content: space-between
-      width: 70px
-      margin: 30px 0 30px
-      +breakpoint(md)
-        margin: 0 0 60px
-        margin-left: auto
-      a
-        position: relative
-        width: auto
-        span.btn-cursos
-          display: inline-flex
-          align-items: center
-          justify-content: center
-          border: 1px solid $amarelo
-          width: 30px
-          height: 30px
-          +border-radius(100px)
-          i
-            width: 9px
-            +font-size(22px)
-            color: $amarelo
+      padding: 1rem
+      +breakpoint(sm)
+        padding: 2rem
+      .cursos-date
+        border: 1px solid $amarelo
+        padding: 1.2rem 1rem
+        display: flex
+        justify-content: center
+        flex-direction: column
+        p
+          margin-bottom: 0
+          text-align: center
+          margin-bottom: 5px
+          &.date-day
+            +font-size(32px)
+            font-weight: 600
+          &.date-month
+            +font-size(16px)
+            font-weight: 600
+          &.date-year
+            margin-bottom: 18px
+            padding-bottom: 18px
+            border-bottom: 1px solid $amarelo
+          &.date-time
+            margin-bottom: 0
+
+      .cursos-content-text
+        padding-left: 1rem
+        +breakpoint(sm)
+          padding-left: 2rem
+        h3
+          +clamp(2)
+          +font-size(18px)
+          line-height: 30px
+          +breakpoint(sm)
+            line-height: 32px
+            +font-size(20px)
+        hr.line-separator
+          width: 50px
+          margin: 1rem 0
+          background-color: $amarelo
+        p
+          +clamp(3)
