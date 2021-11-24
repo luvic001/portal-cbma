@@ -23,5 +23,8 @@ get_modules('Redes-sociais', 'page/home');
 // Artigos
 get_modules('Eventos', 'page/home');
 
-// Artigos
+// Revista
 get_modules('Revista', 'page/home');
+
+// Comitês Jovens
+get_modules('Comites', 'page/home');
