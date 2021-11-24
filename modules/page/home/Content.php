@@ -28,3 +28,6 @@ get_modules('Revista', 'page/home');
 
 // Comitês Jovens
 get_modules('Comites', 'page/home');
+
+// Entidades Fundadoras
+get_modules('Entidades-fundadoras', 'page/footer');
