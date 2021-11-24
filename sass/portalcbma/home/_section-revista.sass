@@ -1,0 +1,18 @@
+main.site-content
+  section.site-sections.section-revista
+    background-color: $verde
+    .section-title
+      h2
+        color: $branco
+
+    * 
+      color: $branco
+
+    a.btn-link
+      +filter(brightness(.8))
+      +default_transition()
+      &:hover
+        +filter(brightness(1))
+      span.arrow-btn-link
+        *
+          background-color: $amarelo

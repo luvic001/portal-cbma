@@ -4,7 +4,7 @@ if (!defined('PATH')) exit;
 
 ?>
 
-<section class="site-sections section-eventos">
+<section class="site-sections section-eventos extra-padding">
 
   <div class="container">
     <div class="section-title section-title d-md-flex align-items-center justify-content-between">

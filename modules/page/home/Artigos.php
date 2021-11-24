@@ -4,7 +4,8 @@ if (!defined('PATH')) exit;
 
 ?>
 
-<section class="site-sections section-artigos">
+<section class="site-sections section-artigos extra-padding">
+  
   <div class="container">
     <div class="section-title d-md-flex align-items-center justify-content-between">
       <div>
