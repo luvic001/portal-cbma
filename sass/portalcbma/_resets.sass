@@ -84,6 +84,40 @@ main.site-content
       p
         +clamp(4)
 
+    // Box com data
+    &.box-default-date
+      display: flex
+      padding: 1rem
+      +breakpoint(sm)
+        padding: 22px 30px
+      .box-date
+        min-width: 78px
+        border: 1px solid $amarelo
+        padding: 1.2rem 1rem
+        display: flex
+        justify-content: center
+        flex-direction: column
+        p
+          margin-bottom: 0
+          text-align: center
+          margin-bottom: 5px
+          &.date-day
+            +font-size(32px)
+            font-weight: 600
+          &.date-month
+            +font-size(16px)
+            font-weight: 600
+          &.date-year
+            margin-bottom: 18px
+            padding-bottom: 18px
+            border-bottom: 1px solid $amarelo
+          &.date-time
+            margin-bottom: 0
+      .box-content
+        padding-left: 1rem
+        +breakpoint(sm)
+          padding-left: 1.7rem
+
   // Default Slider
   .default-slider
     .splide__slide

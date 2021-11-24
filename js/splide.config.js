@@ -27,7 +27,7 @@ $('.splide-2').each(function(){
     pagination: false,
     gap: '1rem',
     breakpoints: {
-      768: {
+      992: {
         perPage: 1
       }
     }

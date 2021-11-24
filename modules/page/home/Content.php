@@ -19,3 +19,6 @@ get_modules('Artigos', 'page/home');
 
 // Artigos
 get_modules('Redes-sociais', 'page/home');
+
+// Artigos
+get_modules('Eventos', 'page/home');

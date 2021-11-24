@@ -1,3 +1,9 @@
+<?php
+
+if (!defined('PATH')) exit;
+
+?>
+
 <div class="splide splide-3 default-slider">
   <div class="splide__track">
     <ul class="splide__list">
