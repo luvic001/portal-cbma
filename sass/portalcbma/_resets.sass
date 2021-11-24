@@ -19,6 +19,17 @@ main.site-content
         +breakpoint(sm)
           line-height: 38px
           +font-size(30px)
+      &.have-after
+        h1, h2
+          &:after
+            content: ''
+            position: relative
+            z-index: 1
+            margin: 2rem 0 2.5rem
+            background-color: $amarelo
+            width: 50px
+            height: 2px
+            display: block
 
   // Reset do editor de texto
   .editor-content

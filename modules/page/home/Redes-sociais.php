@@ -9,7 +9,7 @@ if (!defined('PATH')) exit;
     <div class="row">
       <div class="col-lg-6">
 
-        <div class="section-title">
+        <div class="section-title have-after">
           <h2>Faça parte das redes sociais da CBMA e mantenha-se informado</h2>
         </div>
 
