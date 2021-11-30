@@ -1,0 +1,64 @@
+body
+  &.body-scrolled
+    main.site-content
+      header.site-header
+        background-color: $branco
+        .site-logo
+          a
+            h1
+              color: $verde
+
+        .menu-navigation
+          a
+            span.text
+              color: $verde
+            span.lines
+              span
+                background-color: $verde
+
+  main.site-content
+    header.site-header
+      position: fixed
+      +default_transition()
+      z-index: 100
+      width: 100%
+      padding: 1rem 0
+      +breakpoint(sm)
+        padding: 1rem
+      .site-logo
+        a
+          &:hover
+            text-decoration: none
+          h1
+            +font-size(34px)
+            color: $branco
+      .menu-navigation
+        a
+          display: flex
+          align-items: center
+          &:hover,
+          &:focus
+            text-decoration: none
+            span.lines
+              span
+                &:last-child
+                  width: 100%
+          span.text
+            color: $branco
+            +font-size(18px)
+            font-weight: 400
+          span.lines
+            position: relative
+            width: 25px
+            margin-left: 10px
+            span
+              display: block
+              width: 100%
+              height: 2px
+              margin-bottom: 7px
+              background-color: $branco
+              &:last-child
+                margin-bottom: 0
+                +default_transition()
+                width: 50%
+                

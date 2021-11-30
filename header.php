@@ -38,6 +38,7 @@ $sitename = get_bloginfo('name') . ' | ' . get_bloginfo('description');
 </head>
 <body <?= body_class() ?>>
 
-<?php get_modules('popup'); ?>
+<?php get_modules('Popup'); ?>
 
 <main class="site-content">
+  <?php get_modules('Header'); ?>
