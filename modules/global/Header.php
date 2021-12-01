@@ -2,6 +2,8 @@
 
 if (!defined('PATH')) exit;
 
+get_modules('Header/Content');
+
 ?>
 
 <header class="site-header">
@@ -14,7 +16,7 @@ if (!defined('PATH')) exit;
     </div>
 
     <div class="menu-navigation">
-      <a href="javascript:void(0);" title="Navegar">
+      <a href="javascript:void(0);" title="Navegar" toggle-menu>
         <span class="text">
           Navegar
         </span>
@@ -27,7 +29,5 @@ if (!defined('PATH')) exit;
     </div>
 
   </div>
-
-  
 
 </header>
