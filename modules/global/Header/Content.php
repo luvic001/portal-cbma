@@ -1,6 +1,7 @@
 <?php
 
 if (!defined('PATH')) exit;
+global $sitename;
 
 ?>
 
@@ -10,8 +11,8 @@ if (!defined('PATH')) exit;
     <div class="container-fluid d-flex justify-content-between align-items-center">
       
       <div class="site-logo">
-        <a href="<?= site_url() ?>" title="<?= get_bloginfo('name') ?> | <?= get_bloginfo('description') ?>">
-          <h2>CBMA</h2>
+        <a href="<?= site_url() ?>" title="<?= $sitename ?>">
+          <?= get_site_logo('logo_do_site_megamenu', $sitename) ?>
         </a>
       </div>
 
@@ -39,35 +40,26 @@ if (!defined('PATH')) exit;
 
             <div class="col-md-4 col-lg-3 offset-lg-3 mb-4 mt-4 mt-lg-0 mb-md-5">
               <ul class="megamenu-redes-sociais">
-                <li>
-                  <a href="#">
-                    <i class="fab fa-linkedin-in"></i>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <i class="fab fa-facebook-f"></i>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <i class="fab fa-instagram"></i>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <i class="fab fa-youtube"></i>
-                  </a>
-                </li>
+                <?php foreach (get_redes_sociais() as $key => $label): ?>
+                  <?php $setting = get_theme_mod(sprintf('setting_%s', $key)); if ($setting): ?>
+                    <li>
+                      <a href="<?= $setting ?>" title="<?= $label ?>" target="_blank">
+                        <i class="fab fa-<?= $key ?>"></i>
+                      </a>
+                    </li>
+                  <?php endif; ?>
+                <?php endforeach; ?>
               </ul>
             </div>
-
+            
+            <?php if (get_theme_mod('setting_telefone_principal')): ?>
             <div class="col-md-4 col-lg-3 offset-md-2 offset-lg-3 mb-4 mb-lg-0 mt-md-4 mt-0 mt-lg-0">
-              <a href="tel:+552122339974" class="btn-link megamenu-btn-link">
+              <a href="tel:+<?= only_number(get_theme_mod('setting_telefone_principal')) ?>" class="btn-link megamenu-btn-link">
                 <i class="fas fa-phone fa-rotate-90"></i>
-                +55 (21) 2233-9974
+                <?= get_theme_mod('setting_telefone_principal') ?>
               </a>
             </div>
+            <?php endif; ?>
             
           </div>
         </div>

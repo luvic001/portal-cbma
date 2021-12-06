@@ -3,6 +3,8 @@
 if (!defined('PATH')) exit;
 global $TEMPLATE_DIRECTORY_URI;
 
+get_modules('Footer/Content');
+
 ?>
 
 </main>

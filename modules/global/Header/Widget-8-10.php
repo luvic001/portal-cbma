@@ -50,8 +50,10 @@ if (!defined('PATH')) exit;
   </ul>
 </nav>
 
+<?php if (get_theme_mod('setting_endereco')): ?>
 <nav class="menu-widget">
   <address>
-    Rua Candelária, nº 9, Gr. 803 Centro, Rio de Janeiro - RJ CEP 20091-904
+    <?= get_theme_mod('setting_endereco') ?>
   </address>
 </nav>
+<?php endif;
