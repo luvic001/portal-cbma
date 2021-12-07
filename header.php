@@ -36,7 +36,7 @@ $sitename = get_bloginfo('name') . ' | ' . get_bloginfo('description');
   <!-- / End Files -->
 
 </head>
-<body <?= body_class() ?>>
+<body <?= body_class(!is_front_page() ? 'internal-page' : '') ?>>
 
 <?php get_modules('Popup'); ?>
 

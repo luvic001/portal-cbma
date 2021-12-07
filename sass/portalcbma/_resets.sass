@@ -6,6 +6,12 @@ main.site-content
   // Seções
   section.site-sections
     padding: 70px 0
+    &.background-cover
+      background-size: cover
+    &.background-center
+      background-position: center
+    &.background-fixed
+      background-attachment: fixed
     &.extra-padding
       padding: 70px 0 140px
 
@@ -46,6 +52,7 @@ main.site-content
   .box-default-link
     display: inline-block
     cursor: pointer
+    height: 100%
     &:hover,
     &:focus
       text-decoration: none
@@ -56,6 +63,9 @@ main.site-content
       .box-default
         &:after
           height: 5px 
+      .box-image
+        img
+          +transform(scale(1.1))
 
   // Cards do site padrão
   .box-default
@@ -63,6 +73,8 @@ main.site-content
     +shadow(0 0 3px rgba($paragrafo, .3))
     padding: 22px 30px
     position: relative
+    overflow: hidden
+    height: 100%
     &:after
       content: ''
       position: absolute
@@ -72,6 +84,18 @@ main.site-content
       +default_transition()
       background-color: $amarelo
       left: 0
+    .box-icon
+      min-height: 160px
+      +flex-center-center()
+    figure.box-image
+      +flex-center-center()
+      margin: -2rem
+      margin-bottom: 1rem
+      overflow: hidden
+      img
+        +default_transition()
+        height: auto
+        max-width: 100%
     h3
       +font-size(22px)
       line-height: 32px
