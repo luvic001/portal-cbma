@@ -29,16 +29,15 @@ main.site-content
           line-height: 42px
           +font-size(30px)
       &.have-after
-        h1, h2
-          &:after
-            content: ''
-            position: relative
-            z-index: 1
-            margin: 2rem 0 2.5rem
-            background-color: $amarelo
-            width: 50px
-            height: 2px
-            display: block
+        &:after
+          content: ''
+          position: relative
+          z-index: 1
+          margin: 2rem 0 2.5rem
+          background-color: $amarelo
+          width: 50px
+          height: 2px
+          display: block
 
   // Reset do editor de texto
   .editor-content
@@ -47,6 +46,10 @@ main.site-content
     p
       +font-size(16px)
       line-height: 28px
+
+    &.editor-content-painel
+      p
+        margin-bottom: 1.2rem
 
   // Cards do site formato link
   .box-default-link

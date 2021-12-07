@@ -2,10 +2,11 @@
 
 if (!defined('PATH')) exit;
 
-$section_base = 'componentes-cards-section';
+$section_base = 'componentes-colunasbootstrap-section';
 
 $section = (object) [
   'title' => get_sub_field(sprintf('%s-title', $section_base)),
+  'subtitle' => get_sub_field(sprintf('%s-subtitle', $section_base)),
   'content' => get_sub_field(sprintf('%s-content', $section_base)),
   'cssclass' => get_sub_field(sprintf('%s-cssclass', $section_base)),
   'bgcolor' => get_sub_field(sprintf('%s-bgcolor', $section_base)),
@@ -24,6 +25,9 @@ $section_id = do_hash(rand(1, 1000));
     <?php if ($section->title): ?>
     <div class="section-title">
       <h2><?= $section->title ?></h2>
+      <?php if ($section->subtitle): ?>
+        <p><?= $section->subtitle ?></p>
+      <?php endif; ?>
     </div>
     <?php endif; ?>
 
@@ -33,8 +37,8 @@ $section_id = do_hash(rand(1, 1000));
       </div>
     <?php endif; ?>
     
-    <div class="row mt-4 mt-md-5">
-      <?php get_modules('components/cards/Content') ?>
+    <div class="row">
+      <?php get_modules('components/colunasbootstrap/Content') ?>
     </div>
 
   </div>
