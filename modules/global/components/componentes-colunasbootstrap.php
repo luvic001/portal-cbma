@@ -16,6 +16,11 @@ $section = (object) [
 
 $section_id = do_hash(rand(1, 1000));
 
+$column_settings = (object) [
+  'justify_content' => get_sub_field('componentes-colunasbootstrap-justifycontent'),
+  'align_items' => get_sub_field('componentes-colunasbootstrap-alignitems')
+];
+
 ?>
 
 <section class="site-sections section-<?= $section_id ?> <?= $section->cssclass ?? null ?>">
@@ -37,7 +42,7 @@ $section_id = do_hash(rand(1, 1000));
       </div>
     <?php endif; ?>
     
-    <div class="row">
+    <div class="row <?= $column_settings->justify_content ?> <?= $column_settings->align_items ?>">
       <?php get_modules('components/colunasbootstrap/Content') ?>
     </div>
 
