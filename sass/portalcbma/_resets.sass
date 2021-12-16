@@ -19,6 +19,8 @@ main.site-content
       padding: 70px 0
       +breakpoint(sm)
         padding: 140px 0
+    &.grey-sections
+      background-color: #eeeeee
     &.dark-sections
       .section-title
         h1, h2, p
@@ -33,11 +35,11 @@ main.site-content
       h1, h2
         margin-bottom: 0
         font-weight: 700
-        line-height: 32px
+        line-height: 30px
         color: $verde
         +font-size(24px)
         +breakpoint(sm)
-          line-height: 42px
+          line-height: 38px
           +font-size(30px)
       p
         +font-size(18px)
@@ -47,12 +49,166 @@ main.site-content
           content: ''
           position: relative
           z-index: 1
-          margin: 2rem 0 2.5rem
+          margin: 2rem 0
           background-color: $amarelo
           width: 50px
           height: 2px
           display: block
+
+    .pagination
+      margin: 60px 0 0
+      ul
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 100%
+        li
+          margin-right: 1rem
+          &:last-child
+            margin-right: 0
+          a
+            color: $amarelo
+            +font-size(14px)
+            &.page-numbers
+              &.next,
+              &.prev
+                width: 24px
+                height: 24px
+                +flex-center-center()
+                border: 1px solid $amarelo
+                +border-radius(100px)
+                &:hover
+                  text-decoration: none
+                  background-color: $amarelo
+                  color: $branco
+          &.pagina-atual
+            a
+              color: #707070
+
+    // SINGLE
+    &.section-single
       
+      figure.single-thumbnail
+        margin-bottom: 1.5rem
+        +flex-center-center()
+        +breakpoint(sm)
+          margin-bottom: 2.5rem
+      
+      .post-info
+        margin-top: -10px
+        margin-bottom: 1.5rem
+        p, time
+          font-style: italic
+          color: #888888
+          a
+            color: $amarelo
+
+    .widget-single
+      margin-bottom: 3rem
+      .widget-title
+        h3
+          color: $verde
+          +font-size(26px)
+          font-weight: 600
+        &:after
+          content: ''
+          position: relative
+          z-index: 1
+          margin: 8px 0 2rem
+          background-color: $amarelo
+          width: 50px
+          height: 2px
+          display: block
+      .widget-content
+        &.related-posts
+          ul
+            li
+              margin-bottom: 1.5rem
+              a
+                color: $verde
+                span
+                  &.post-title
+                    font-weight: 600
+                    display: block
+                    margin-bottom: 6px
+                    +font-size(22px)
+                  &.post-date
+                    font-style: italic
+                    +font-size(14px)
+                    color: #888888
+                &:hover
+                  text-decoration: none
+        
+        &.list-categories
+          li
+            margin-bottom: 10px
+            &.current-cat
+              > a
+                color: #888888
+            a
+              color: $verde
+          ul
+            position: relative
+            &.children
+              margin-left: 30px
+              margin-top: 12px
+              li
+                list-style-type: disc
+
+        &.widget-search
+          .wp-block-search__label
+            display: none
+
+    // Eventos
+    .eventos-info
+      margin-bottom: 2rem
+      ul
+        display: flex
+        flex-wrap: wrap
+        +breakpoint(md)
+          flex-wrap: nowrap
+        li
+          padding: 1rem
+          margin-bottom: 1rem
+          border: 1px solid $amarelo
+          min-width: 100px
+          margin-right: 1rem
+          +breakpoint(sm)
+            margin-right: 2rem
+          span
+            color: $verde
+            +font-size(14px)
+            &.featured-number
+              +font-size(34px)
+              font-weight: 600
+
+          &.event-address
+            +flex-center-center()
+            address
+              color: $verde
+              +font-size(14px)
+              line-height: 20px
+
+          &.event-link
+            border: 0
+            padding: 0
+            position: relative
+            margin-right: 0
+            a
+              height: 100%
+              width: 100%
+              text-align: center
+              color: $verde
+              text-transform: uppercase
+              line-height: 28px
+              padding: 1rem 25px
+              +font-size(20px)
+              +flex-center-center()
+              background-color: $amarelo
+              font-weight: 600
+              &:hover
+                text-decoration: none
+                +filter(brightness(.9))
   // Reset do editor de texto
   .editor-content
     +font-size(16px)
@@ -83,9 +239,29 @@ main.site-content
     h6
       +font-size(12px)
 
+    ul, ol
+      margin: 1rem 0
+      li
+        margin-bottom: 10px
+        margin-left: 1rem
+      
+    ul
+      li
+        list-style-type: disc
+
+    ol
+      li
+        list-style-type: decimal
+
+    blockquote
+      border-left: 2px solid $amarelo
+      padding: 0 0 0 1.5rem
+
     &.editor-content-painel
       p
         margin-bottom: 1.2rem
+      h1, h2, h3, h4, h5, h6
+        margin-top: 1rem
 
   // Cards do site formato link
   .box-default-link
@@ -150,6 +326,7 @@ main.site-content
 
     .post-info
       +font-size(14px)
+      line-height: 20px
       font-style: italic
       color: #888
       margin-bottom: 16px

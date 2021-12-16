@@ -1,0 +1,37 @@
+form
+  .input-text
+    position: relative
+    label
+      width: 100%
+      position: relative
+      input
+        width: 100%
+        padding: 10px 0
+        border: 0
+        border-bottom: 1px solid $verde
+        &:focus,
+        &.active
+          border-bottom-color: $amarelo
+          outline: none
+          ~ span
+            +font-size(12px)
+            top: -10px
+      span
+        +font-size(16px)
+        color: #888888
+        position: absolute
+        left: 0
+        top: 12px
+        +default_transition()
+        left: 0
+    
+    button
+      position: absolute
+      right: 0
+      top: 0
+      bottom: 0
+      margin: auto
+      background-color: $transparent
+      border: 0
+      i
+        color: $amarelo

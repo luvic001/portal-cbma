@@ -4,7 +4,12 @@ if (!defined('PATH')) exit;
 global $sitename;
 
 ?>
-
+<style>
+  aside.site-megamenu {
+    background-image: url('<?= get_image('textura-losangos.png') ?>');
+    background-blend-mode: color-burn;
+  }
+</style>
 <aside class="site-megamenu">
 
   <div class="megamenu-head">
