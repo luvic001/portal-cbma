@@ -4,7 +4,7 @@ if (!defined('PATH')) exit;
 
 ?>
 
-<section class="site-sections section-metodos-extrajudiciais">
+<section class="site-sections section-metodos-extrajudiciais background-fixed background-parallax" style="background-image: url('<?= get_image('textura-losangos.png') ?>');">
 
   <div class="container">
     <div class="row">

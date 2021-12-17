@@ -4,7 +4,9 @@ if (!defined('PATH')) exit;
 
 ?>
 
-<section class="site-sections section-artigos extra-padding">
+<section 
+  class="site-sections section-artigos extra-padding background-cover background-center" 
+  style="background-image: url('<?= get_image('bg-artigos.png') ?>');">
   
   <div class="container">
     <div class="section-title d-md-flex align-items-center justify-content-between">

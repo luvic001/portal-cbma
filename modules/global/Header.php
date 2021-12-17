@@ -37,3 +37,8 @@ get_modules('Header/Content');
   </div>
 
 </header>
+
+<?php
+
+if (!is_front_page()) 
+  get_modules('Header-interna');

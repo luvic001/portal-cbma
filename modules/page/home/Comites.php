@@ -4,7 +4,9 @@ if (!defined('PATH')) exit;
 
 ?>
 
-<section class="site-sections section-comites">
+<section 
+  class="site-sections section-comites background-fixed background-parallax"
+  style="background-image: url('<?= get_image('textura-losangos.png') ?>');">
   <div class="container">
     <div class="row">
 

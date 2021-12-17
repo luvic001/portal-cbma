@@ -20,13 +20,19 @@ if (!defined('PATH')) exit;
       </div>
 
       <div class="col-4 col-lg-3">
-        <p class="plain">Image.png</p>
+        <div class="editor-content">
+          <p><img loading="lazy" class="size-full wp-image-167 aligncenter" src="http://portalcbma.local.com.br/wp-content/uploads/2021/12/acrj.png" alt="" width="190" height="99"></p>
+        </div>
       </div>
       <div class="col-4 col-lg-3">
-        <p class="plain">Image.png</p>
+        <div class="editor-content editor-content-painel">
+          <p><img loading="lazy" class="size-full wp-image-168 aligncenter" src="http://portalcbma.local.com.br/wp-content/uploads/2021/12/cnseg.png" alt="" width="200" height="91"></p>
+        </div>
       </div>
       <div class="col-4 col-lg-3">
-        <p class="plain">Image.png</p>
+        <div class="editor-content editor-content-painel">
+          <p><img loading="lazy" class="alignnone size-full wp-image-169 aligncenter" src="http://portalcbma.local.com.br/wp-content/uploads/2021/12/firjan-logo.png" alt="" width="220" height="115"></p>
+        </div>
       </div>
 
     </div>

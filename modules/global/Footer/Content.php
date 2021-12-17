@@ -5,7 +5,9 @@ global $sitename;
 
 ?>
 
-<footer class="site-footer">
+<footer 
+  class="site-footer background-center background-cover" 
+  style="background-image: url('<?= get_image('bg-footer.png') ?>');">
   <div class="container">
 
     <div class="row">

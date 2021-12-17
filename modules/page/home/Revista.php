@@ -4,7 +4,8 @@ if (!defined('PATH')) exit;
 
 ?>
 
-<section class="site-sections section-revista">
+<section class="site-sections section-revista background-cover background-center"
+  style="background-image: url('<?= get_image('bg-revista.png') ?>')">
 
   <div class="container">
     <div class="row">

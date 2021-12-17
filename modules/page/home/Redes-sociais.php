@@ -4,7 +4,9 @@ if (!defined('PATH')) exit;
 
 ?>
 
-<section class="site-sections section-redes-sociais">
+<section 
+  class="site-sections section-redes-sociais background-cover background-center" 
+  style="background-image: url('<?= site_url() ?>/wp-content/uploads/2021/12/bg-redes-sociais.png')">
   <div class="container">
     <div class="row">
       <div class="col-lg-6">

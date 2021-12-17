@@ -4,7 +4,9 @@ if (!defined('PATH')) exit;
 
 ?>
 
-<section class="site-sections section-eventos extra-padding">
+<section 
+  class="site-sections section-eventos extra-padding background-fixed background-parallax" 
+  style="background-image: url('<?= get_image('textura-losangos.png') ?>');">
 
   <div class="container">
     <div class="section-title section-title d-md-flex align-items-center justify-content-between">

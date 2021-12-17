@@ -282,6 +282,22 @@ main.site-content
         img
           +transform(scale(1.1))
 
+  // Cads do site padrão sem fundo
+  .no-appearance
+    .box-default
+      +shadow(initial)
+      background-color: $transparent
+      padding: 0
+      figure.box-image
+        margin: 0
+        margin-bottom: 1rem
+      &:after
+        content: initial
+      hr.line-separator
+        max-width: 60px
+      .editor-content
+        p
+          +clamp(initial)
   // Cards do site padrão
   .box-default
     background-color: $branco
@@ -337,7 +353,7 @@ main.site-content
     .editor-content
       p
         +clamp(4)
-
+    
     // Box com data
     &.box-default-date
       display: flex

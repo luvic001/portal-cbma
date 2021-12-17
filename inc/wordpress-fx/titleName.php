@@ -32,22 +32,12 @@ function titleName() {
 
         }
 
-        else if (get_post_type() == 'especialidade') {
+        else if (get_post_type() == 'cursos') {
 
-            #$categorias = get_the_terms($post->ID, 'especialidade');
-            // if(is_tax('categoria-de-servicos')){
-            //     $categorias = get_the_terms($post->ID, 'categoria-de-servicos');
-            //     $page_title = $categorias[0]->name;
-            // }
-            if(is_singular('especialidade')){
+            if(is_singular('cursos')){
                 $page_title = get_the_title();#$categorias[0]->name;
             }
 
-        }
-
-        else if (get_post_type() == 'unidades')
-        {
-            $page_title = get_the_title();
         }
 
         else {
@@ -55,14 +45,6 @@ function titleName() {
             $page_title = single_cat_title('',false);
 
         }
-
-    }
-
-    else if (is_tax('categoria-de-servicos')){
-
-        $categorias = get_the_terms($post->ID, 'categoria-de-servicos');
-
-        $page_title = $categorias[0]->name;
 
     }
 	
