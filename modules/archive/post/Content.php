@@ -1,6 +1,7 @@
 <?php
 
 if (!defined('PATH')) exit;
+$queried_object = get_queried_object();
 
 ?>
 
@@ -10,6 +11,14 @@ if (!defined('PATH')) exit;
 
       <div class="col-md-7 col-lg-8 posts-list">
         <div class="row">
+          <?php if ($queried_object->description): ?>
+          <div class="col-12">
+            <div class="editor-content editor-content-painel">
+              <?= wpautop($queried_object->description) ?>
+            </div>
+          </div>
+          <?php endif; ?>
+
           <?php if (have_posts()): while (have_posts()): the_post(); ?>
             <div class="col-lg-6 mb-4">
               <a class="box-default-link w-100" href="<?= get_the_permalink() ?>">
