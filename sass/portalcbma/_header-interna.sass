@@ -1,12 +1,14 @@
 section.header-interna
-  height: 240px
+  min-height: 240px
   background-color: $verde
-  padding-top: 70px
   position: relative
+  display: flex
+  padding-top: 60px
+  +breakpoint(sm)
+    padding-top: 70px
   .container
     display: flex
     align-items: center
-    height: 100%
     position: relative
     h1, h2
       color: $branco
@@ -16,6 +18,9 @@ section.header-interna
     .header-breadcrumb
       position: absolute
       bottom: 12px
+      display: none
+      +breakpoint(sm)
+        display: block
       p
         color: #adadad
         a
@@ -25,3 +30,12 @@ section.header-interna
         i
           margin-right: 5px
           color: #999
+
+        span.breadcrumb_last
+          display: inline-block
+          max-width: 300px
+          white-space: nowrap
+          overflow: hidden
+          padding: 3px 0
+          margin-bottom: -5px
+          text-overflow: ellipsis
