@@ -25,7 +25,7 @@ section.popup-site .glass {
 }
 
 section.popup-site .glass {
-  position: absolute;
+  position: fixed;
   z-index: 0;
   background-color: rgba(0,0,0,.8);
 }
@@ -75,5 +75,5 @@ section.popup-site .content .response-content {
 section.popup-site .content ul li {
   list-style-type: disc;
   margin-bottom: 5px;
-  margin-left: 25px
+  margin-left: 25px;
 }

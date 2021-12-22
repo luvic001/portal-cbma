@@ -23,7 +23,16 @@ $sitename = get_bloginfo('name') . ' | ' . get_bloginfo('description');
   <style>
     <?= get_file('style.css') ?>
   </style>
-  <script>var adm_ajax = '<?= admin_url('admin-ajax.php') ?>';</script>
+  <script>
+    var adm_ajax = '<?= admin_url('admin-ajax.php') ?>';
+    var site_url = '<?= site_url() ?>';
+    let siteLoader = `
+    <div class="loading-options">
+      <?= svg('lds-ring') ?>
+      <p>Carregando</p>
+    </div>
+    `;
+  </script>
   <script type="text/javascript" src="<?= $TEMPLATE_DIRECTORY_URI ?>/js/jQuery.min.js"></script>
   <script type="text/javascript" src="<?= $TEMPLATE_DIRECTORY_URI ?>/js/bootstrap.min.js" async defer></script>
   <script type="text/javascript" src="<?= $TEMPLATE_DIRECTORY_URI ?>/js/splide.min.js" async defer></script>
