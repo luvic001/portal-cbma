@@ -2,6 +2,15 @@
 
 if (!defined('PATH')) exit;
 
+$base = 'section-artigos';
+$title = get_field($base.'-title');
+$subtitle = get_field($base.'-subtitle');
+$link = (object) [
+  'url' => get_field($base.'-link'),
+  'text' => get_field($base.'-link_text'),
+  'newblank' => get_field($base.'-link_newtab'),
+];
+
 ?>
 
 <section 
@@ -11,15 +20,29 @@ if (!defined('PATH')) exit;
   <div class="container">
     <div class="section-title d-md-flex align-items-center justify-content-between">
       <div>
-        <h2 class="to-upper">Artigos, Conteúdos e Notícias</h2>
-        <p>Fique por dentro do CBMA</p>
+        <?php if ($title): ?>
+          <h2 class="to-upper"><?= $title ?></h2>
+        <?php endif; ?>
+        
+        <?php if ($subtitle): ?>
+          <p><?= $subtitle ?></p>
+        <?php endif; ?>
+
       </div>
-      <div class="mt-4 mt-md-0">
-        <a href="#" class="btn-link btn-link-default">
-          Acessar todos
-          <?= svg('arrow-btn-link') ?>
-        </a>
-      </div>
+      
+      <?php if ($link->url): ?>
+        <div class="mt-4 mt-md-0">
+          <a 
+            href="<?= $link->url ?>" 
+            class="btn-link btn-link-default"
+            title="<?= $link->text ?>"
+            <?= ($link->newblank) ? 'target="_blank"' : null ?>>
+            <?= $link->text ?>
+            <?= svg('arrow-btn-link') ?>
+          </a>
+        </div>
+      <?php endif; ?>
+
     </div>
 
     <?php get_modules('artigos/carousel-artigos', 'page/home') ?>

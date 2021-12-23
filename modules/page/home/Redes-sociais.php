@@ -2,6 +2,15 @@
 
 if (!defined('PATH')) exit;
 
+$base = 'section-rs';
+$title = get_field($base.'-title');
+$rs = (object) [
+  'linkedin' => get_field($base.'-linkedin'),
+  'facebook' => get_field($base.'-facebook'),
+  'twitter' => get_field($base.'-twitter'),
+  'youtube' => get_field($base.'-youtube'),
+];
+
 ?>
 
 <section 
@@ -11,27 +20,45 @@ if (!defined('PATH')) exit;
     <div class="row">
       <div class="col-lg-6">
 
-        <div class="section-title have-after">
-          <h2>Faça parte das redes sociais da CBMA e mantenha-se informado</h2>
-        </div>
+        <?php if ($title): ?>
+          <div class="section-title have-after">
+            <h2><?= $title ?></h2>
+          </div>
+        <?php endif; ?>
 
         <ul class="redes-sociais">
 
-          <li>
-            <a href="#">
-              <i class="fab fa-linkedin-in fa-2x"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fab fa-facebook-f fa-2x"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fab fa-twitter fa-2x"></i>
-            </a>
-          </li>
+          <?php if ($rs->linkedin): ?>
+            <li>
+              <a href="<?= $rs->linkedin ?>" target="_blank" title="LinkedIn | <?= get_bloginfo('name') ?>">
+                <i class="fab fa-linkedin-in fa-2x"></i>
+              </a>
+            </li>
+          <?php endif; ?>
+
+          <?php if ($rs->facebook): ?>
+            <li>
+              <a href="<?= $rs->facebook ?>" target="_blank" title="Facebook | <?= get_bloginfo('name') ?>">
+                <i class="fab fa-facebook-f fa-2x"></i>
+              </a>
+            </li>
+          <?php endif; ?>
+
+          <?php if ($rs->twitter): ?>
+            <li>
+              <a href="<?= $rs->twitter ?>" target="_blank" title="Twitter | <?= get_bloginfo('name') ?>">
+                <i class="fab fa-twitter fa-2x"></i>
+              </a>
+            </li>
+          <?php endif; ?>
+
+          <?php if ($rs->youtube): ?>
+            <li>
+              <a href="<?= $rs->youtube ?>" target="_blank" title="YouTube | <?= get_bloginfo('name') ?>">
+                <i class="fab fa-youtube fa-2x"></i>
+              </a>
+            </li>
+          <?php endif; ?>
           
         </ul>
 

@@ -2,36 +2,51 @@
 
 if (!defined('PATH')) exit;
 
+$cursos = new WP_Query([
+  'post_type' => 'cursos',
+  'posts_per_page' => 3
+]);
+
+if ($cursos->have_posts()):
+
 ?>
 
 <div class="splide splide-1 default-slider">
   <div class="splide__track">
     <ul class="splide__list">
 
-      <?php foreach ([1,2,3,4,5] as $item): ?>
+      <?php while ($cursos->have_posts()): $cursos->the_post(); ?>
 
       <li class="splide__slide">
-        <div class="cursos-content">
-          <div class="cursos-box">
-            <div class="cursos-date">
-              <p class="date-day">12</p>
-              <p class="date-month">NOV</p>
-              <p class="date-year">2021</p>
-              <p class="date-time">20h30</p>
-            </div>
-            <div class="cursos-content-text">
-              <div class="editor-content">
-                <h3>Magna deserunt incididunt laborum ullamco sunt commodo dolore irure quis cupidatat minim quinim eu sit incididunt pariatur qui commodo et quis</h3>
-                <hr class="line-separator">
-                <p>Qui laborum velit ad sunt commodo id quis. Magna deserunt incididunt ullamco laborum laborum ullamco pariatur ex in laborum sint ad. Tempor quis culpa Lorem dolore irure quis cupidatat minim quinim eu sit incididunt pariatur qui commodo et quis.</p>
+        <a href="<?= get_the_permalink() ?>" title="<?= get_the_title() ?>" class="cursos-link">
+          <div class="cursos-content">
+            <div class="cursos-box">
+              <div class="cursos-date">
+                <p class="date-day"><?= get_the_date('d') ?></p>
+                <p class="date-month"><?= get_the_date('M') ?></p>
+                <p class="date-year"><?= get_the_date('Y') ?></p>
+                <p class="date-time"><?= get_the_date('H') ?>h<?= get_the_date('i') ?></p>
+              </div>
+              <div class="cursos-content-text">
+                <div class="editor-content">
+                  <h3><?= get_the_title() ?></h3>
+                  <hr class="line-separator">
+                  <p><?= strip_tags(get_the_excerpt()) ?></p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </a>
       </li>
 
-      <?php endforeach ?>
+      <?php endwhile; ?>
 
     </ul>
   </div>
 </div>
+
+<?php
+
+endif;
+
+wp_reset_query();

@@ -2,6 +2,24 @@
 
 if (!defined('PATH')) exit;
 
+$base = 'section-cj';
+$title = get_field($base.'-title');
+$description = get_field($base.'-description');
+
+$cj = new WP_Query([
+  'post_type' => 'post',
+  'posts_per_page' => 2,
+  'tax_query' => [
+    [
+      'taxonomy' => 'category',
+      'field' => 'slug',
+      'terms' => 'comites-jovens'
+    ]
+  ]
+]);
+
+if ($cj->have_posts()):
+
 ?>
 
 <section 
@@ -12,31 +30,32 @@ if (!defined('PATH')) exit;
 
       <div class="col-lg-4 primary-section">
         <div class="content-section">
-          <div class="section-title">
-            <h2>Comitês Jovens</h2>
-          </div>
+          <?php if ($title): ?>
+            <div class="section-title">
+              <h2><?= $title ?></h2>
+            </div>
+          <?php endif; ?>
           <div class="editor-content">
-            <p>É um dos projetos idealizados e concretizados pelo Presidente do CBMA, Gustavo Schmidt, para a promoção dos meios alternativos de solução de conflitos no Brasil.</p>
+            <?= $description ?>
           </div>
         </div>
       </div>
-
-      <article class="col-lg-4 col-md-6">
-        <div class="editor-content">
-          <h3>CJ Arbitralistas</h3>
-          <p>O Comitê possui duas frentes, sendo uma relacionada às atividades acadêmicas – tais como a elaboração de artigos, a organização de mídias sociais etc. – e outra direcionada à criação de eventos, sejam eles internos ou externos.</p>
-          <a href="#" class="btn-link btn-link-default">Acessar blog <?= svg('arrow-btn-link') ?></a>
-        </div>
-      </article>
-
-      <article class="col-lg-4 col-md-6">
-        <div class="editor-content">
-          <h3>CJ Mediadores</h3>
-          <p>O Comitê possui duas frentes, sendo uma relacionada às atividades acadêmicas – tais como a elaboração de artigos, a organização de mídias sociais etc. – e outra direcionada à criação de eventos, sejam eles internos ou externos.</p>
-          <a href="#" class="btn-link btn-link-default">Acessar blog <?= svg('arrow-btn-link') ?></a>
-        </div>
-      </article>
+      
+      <?php while ($cj->have_posts()): $cj->the_post(); ?>
+        <article class="col-lg-4 col-md-6">
+          <div class="editor-content">
+            <h3><?= get_the_title() ?></h3>
+            <p><?= strip_tags(get_the_excerpt()) ?></p>
+            <a href="<?= get_the_permalink() ?>" class="btn-link btn-link-default">Acessar blog <?= svg('arrow-btn-link') ?></a>
+          </div>
+        </article>
+      <?php endwhile; ?>
 
     </div>
   </div>
 </section>
+<?php
+
+endif;
+
+wp_reset_query();
