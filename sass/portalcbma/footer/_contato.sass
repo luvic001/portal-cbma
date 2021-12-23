@@ -1,0 +1,53 @@
+.contact-content
+  position: relative
+  +breakpoint(sm)
+    padding-left: 3rem
+  &:before
+    content: ''
+    background-color: rgba($branco, .3)
+    height: 1px
+    width: 100%
+    position: relative
+    margin: .5rem 0 2rem
+    display: block
+    +breakpoint(sm)
+      margin: 0
+      height: 100%
+      width: 1px
+      position: absolute
+      left: 0
+    +breakpoint(md)
+      left: -3.5rem
+  .section-title
+    margin-bottom: 2rem
+    h2
+      font-weight: 600
+      +font-size(30px)
+      color: $branco
+      margin-bottom: 5px
+    p
+      color: rgba($branco, .6)
+  .input-text
+    margin-bottom: 1rem
+    input, textarea
+      border-bottom-color: $amarelo
+      color: $branco
+    textarea
+      height: 40px
+    span.text
+      color: rgba($branco, .6)
+
+  .input-submit
+    margin-top: 40px
+
+  .wpcf7-response-output
+    border: 1px solid #c33 !important
+    color: $branco !important
+    text-align: center
+    margin-left: 0 !important
+    margin-right: 0 !important
+    padding: 1rem !important
+
+  .wpcf7-not-valid-tip
+    display: block
+    margin: 5px 0 10px

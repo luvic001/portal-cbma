@@ -57,6 +57,14 @@ global $sitename;
         </div>
 
       </div>
+      <div class="col-md-6">
+        <?php get_modules('Footer/Content-contact') ?>
+      </div>
+      
+      <div class="col-12">
+        <?php get_modules('Footer/Content-credits') ?>
+      </div>
+
     </div>
 
   </div>

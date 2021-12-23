@@ -4,19 +4,26 @@ form
     label
       width: 100%
       position: relative
-      input
+      input, textarea
         width: 100%
         padding: 10px 0
         border: 0
         border-bottom: 1px solid $verde
+        background-color: $transparent
         &:focus,
         &.active
           border-bottom-color: $amarelo
           outline: none
-          ~ span
+          ~ span.text
             +font-size(12px)
             top: -10px
-      span
+      .active
+        border-bottom-color: $amarelo
+        outline: none
+        ~ span.text
+          +font-size(12px)
+          top: -10px
+      span.text
         +font-size(16px)
         color: #888888
         position: absolute
@@ -35,3 +42,14 @@ form
       border: 0
       i
         color: $amarelo
+
+  .input-submit
+    input, button
+      background-color: $amarelo
+      border: 0
+      text-transform: uppercase
+      text-align: center
+      display: inline-block
+      padding: 10px 45px
+      +font-size(20px)
+      font-weight: 600

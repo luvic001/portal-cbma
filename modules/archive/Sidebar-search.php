@@ -10,7 +10,7 @@ global $action;
     
     <label>
       <input type="text" name="s">
-      <span>Pesquisar</span>
+      <span class="text">Pesquisar</span>
     </label>
     <button type="submit">
       <i class="fas fa-search"></i>
