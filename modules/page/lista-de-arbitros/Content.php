@@ -19,8 +19,10 @@ if (!defined('PATH')) exit;
         <form form-arbitro>
           <div class="input-text">
             <label>
-              <input type="text" search-arbitros name="search-arbitros" id="search-arbitros">
-              <span>Procurar profissional</span>
+              <span>
+                <input type="text" search-arbitros name="search-arbitros" id="search-arbitros">
+              </span>
+              <span class="text">Procurar profissional</span>
             </label>
             <button type="submit">
               <i class="fas fa-search"></i>
