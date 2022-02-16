@@ -4,7 +4,7 @@ if (!defined('PATH')) exit;
 
 $data = unjson(undo_hash($_POST['arbitro_data']));
 
-if (!$data->page_id) {
+if (!$data->arbitro_id) {
   fjson([
     'success' => false,
     'content' => 'Árbitro não encontrado'
@@ -12,28 +12,26 @@ if (!$data->page_id) {
 }
 
 $page = new WP_Query([
-  'post_type' => 'page',
-  'post__in' => [$data->page_id]
+  'post_type' => 'arbitros',
+  'post__in' => [$data->arbitro_id]
 ]);
 
 if ($page->have_posts()) {
   while ($page->have_posts()) {
     $page->the_post();
-
-    foreach (get_field('arbitros-lista') as $value) {
-      $content[$value['arbitros-title']] = [
-        'title' => $value['arbitros-title'],
-        'cargo' => $value['arbitros-cargo'],
-        'content' => $value['arbitros-content'],
-        'thumbnail' => $value['arbitros-thumbnail'],
-        'link' => $value['arbitros-link'],
-        'new_blank' => $value['arbitros-link-newblank'],
+    
+      $content = [
+        'title' => get_the_title(),
+        'cargo' => get_field('arbitro-cargo'),
+        'content' => wpautop(get_the_content()),
+        'thumbnail' => get_the_post_thumbnail_url(get_the_ID()),
+        'link' => get_field('arbitro-link'),
+        'new_blank' => get_field('arbitro-link-newblank'),
       ];
-    }
 
   }
 }
 
 get_modules('ajax-arbitros-content', 'page/lista-de-arbitros', [
-  'arbitro_data' => $content[$data->arbitro]
+  'arbitro_data' => $content
 ]);

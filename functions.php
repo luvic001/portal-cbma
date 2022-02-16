@@ -11,7 +11,7 @@ $host['development']['path'] = '';
 define('SITE_URL', function_exists('site_url') ? site_url() : $host[ENVIRONMENT]['url']);
 
 // Enable Debug
-define('DEBUG', true);
+define('DEBUG', false);
 
 // Informe se o site é wordpress
 define('IS_WP', true);
