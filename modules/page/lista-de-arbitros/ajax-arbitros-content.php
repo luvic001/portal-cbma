@@ -41,7 +41,7 @@ getCurStyleSheet('style', 'page/lista-de-arbitros');
   </div>
   <?php if ($arbitro_data['thumbnail']): ?>
   <div class="arbitros-thumbnail"></div>
-  <style>.arbitros-thumbnail {background-image: url('<?= wpfx_get_image($arbitro_data['thumbnail']) ?>');}</style>
+  <style>.arbitros-thumbnail {background-image: url('<?= $arbitro_data['thumbnail'] ?>');}</style>
   <?php endif; ?>
 
 </div>

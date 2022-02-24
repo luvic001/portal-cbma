@@ -2,7 +2,7 @@
 
 if (!defined('PATH')) exit;
 $lista = new WP_Query([
-  'post_type' => 'arbitros',
+  'post_type' => 'mediadores',
   'posts_per_page' => -1,
   'orderby' => 'title',
   'order' => 'ASC'
@@ -21,7 +21,7 @@ if ($lista->have_posts()):
           href="javascript:void(0);" 
           arbitros-link="<?= do_hash(json([
             'arbitro_id' => get_the_ID(),
-            'type' => 'arbitros'
+            'type' => 'mediadores'
           ])); ?>" 
           title="<?= get_the_title() ?>"
           class="h-100">

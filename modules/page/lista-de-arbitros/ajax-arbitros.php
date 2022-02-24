@@ -11,8 +11,15 @@ if (!$data->arbitro_id) {
   ], 400);
 }
 
+if (!$data->type) {
+  fjson([
+    'success' => false,
+    'content' => 'Nenhum dado referênte à pesquisa'
+  ], 400);
+}
+
 $page = new WP_Query([
-  'post_type' => 'arbitros',
+  'post_type' => $data->type,
   'post__in' => [$data->arbitro_id]
 ]);
 
