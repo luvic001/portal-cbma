@@ -56,7 +56,7 @@ if (!defined('PATH')) exit;
 
 <div class="widget-single">
   <div class="widget-title">
-    <h3>Navegue</h3>
+    <h3>Veja Também</h3>
   </div>
   <div class="widget-content list-categories">
     <?php wp_list_categories('title_li=') ?>

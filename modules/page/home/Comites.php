@@ -46,7 +46,7 @@ if ($cj->have_posts()):
           <div class="editor-content">
             <h3><?= get_the_title() ?></h3>
             <p><?= strip_tags(get_the_excerpt()) ?></p>
-            <a href="<?= get_the_permalink() ?>" class="btn-link btn-link-default">Acessar blog <?= svg('arrow-btn-link') ?></a>
+            <a href="<?= get_the_permalink() ?>" class="btn-link btn-link-default">Acessar <?= svg('arrow-btn-link') ?></a>
           </div>
         </article>
       <?php endwhile; ?>
