@@ -1,0 +1,55 @@
+section.popup-personalizar {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 600;
+  opacity: 0;
+  pointer-events: none;
+  transition: ease .3s all;
+}
+
+body.popup-personalizar section.popup-personalizar {
+  pointer-events: all;
+  opacity: 1;
+}
+
+section.popup-personalizar .glass {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background-color: rgba(0,0,0,.65);
+}
+
+section.popup-personalizar .popup-content {
+  position: relative;
+  z-index: 1;
+}
+
+section.popup-personalizar .popup-content figure {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 640px;
+}
+
+section.popup-personalizar .popup-content figure img {
+  height: auto;
+  width: 100%;
+}
+
+section.popup-personalizar .popup-content a.close-popup {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 24px;
+  color: #ffffff;
+}

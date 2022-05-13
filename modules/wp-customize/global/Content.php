@@ -5,7 +5,7 @@ if (!defined('PATH')) exit;
 $panel_name = 'informacoes_globais';
 
 $wp_customize->add_panel($panel_name, [
-  'title' => __('Informações Globais', 'poli'),
+  'title' => 'Informações Globais',
 ]);
 
 // Redes Sociais ======================================
@@ -87,4 +87,47 @@ $wp_customize->add_control(new WP_Customize_Control($wp_customize, $setting_name
   'section' => 'informacoes-gerais',
   'settings' => $setting_name,
   'description' => ''
+]));
+
+// Popup ==============================
+
+$wp_customize->add_section('popup-entrada', [
+  'title' => 'Popup',
+  'panel' => $panel_name
+]);
+
+$setting_name = 'setting_popup_image';
+$wp_customize->add_setting($setting_name);
+$wp_customize->add_control(new WP_Customize_Media_Control($wp_customize, $setting_name, [
+  'label' => 'Imagem da Popup',
+  'section' => 'popup-entrada',
+  'settings' => $setting_name,
+  'description' => 'Formato recomendado: Retangular <b>(640x480)</b>'
+]));
+
+$setting_name = 'setting_popup_link';
+$wp_customize->add_setting($setting_name);
+$wp_customize->add_control(new WP_Customize_Control($wp_customize, $setting_name, [
+  'label' => 'Link da Popup',
+  'section' => 'popup-entrada',
+  'settings' => $setting_name,
+  'description' => ''
+]));
+
+$setting_name = 'setting_popup_link_newtab';
+$wp_customize->add_setting($setting_name);
+$wp_customize->add_control(new WP_Customize_Control($wp_customize, $setting_name, [
+  'label' => 'Abrir link em nova Guia',
+  'type' => 'checkbox',
+  'section' => 'popup-entrada',
+  'settings' => $setting_name,
+  'description' => ''
+]));
+
+$setting_name = 'setting_popup_close_color';
+$wp_customize->add_setting($setting_name);
+$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, $setting_name, [
+  'label' => 'Cor do botão fechar (X)',
+  'section' => 'popup-entrada',
+  'settings' => $setting_name,
 ]));

@@ -48,6 +48,7 @@ $sitename = get_bloginfo('name') . ' | ' . get_bloginfo('description');
 <body <?= body_class(!is_front_page() ? 'internal-page' : '') ?>>
 
 <?php get_modules('Popup'); ?>
+<?php get_modules('Popup-personalizar'); ?>
 
 <main class="site-content">
   <?php get_modules('Header'); ?>
