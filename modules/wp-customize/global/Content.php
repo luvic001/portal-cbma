@@ -5,7 +5,7 @@ if (!defined('PATH')) exit;
 $panel_name = 'informacoes_globais';
 
 $wp_customize->add_panel($panel_name, [
-  'title' => 'Informações Globais',
+  'title' => __('Informações Globais', 'poli'),
 ]);
 
 // Redes Sociais ======================================
