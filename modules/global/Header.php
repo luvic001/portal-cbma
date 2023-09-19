@@ -3,7 +3,7 @@
 if (!defined('PATH')) exit;
 global $sitename;
 
-get_modules('Header/Content');
+get_modules('Header/Content', "global");
 
 ?>
 
@@ -21,9 +21,10 @@ get_modules('Header/Content');
       </a>
     </div>
 
-    <div class="menu-navigation">
+    <div class="menu-navigation d-flex align-items-center">
+      <?php get_modules("translate/index") ?>
       <a href="javascript:void(0);" title="Navegar" toggle-menu>
-        <span class="text">
+        <span class="text d-none d-md-block">
           Navegar
         </span>
         <span class="lines">

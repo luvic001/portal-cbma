@@ -1,0 +1,88 @@
+/** 
+ * 
+ * ESTILIZAÇÃO DO TRADUTOR
+ * 
+ * */
+@media (min-width: 1200px) {
+  header.site-header {
+    display: flex;
+    align-items: center;
+  }
+}
+
+html body .language-switcher {
+  width: 70px;
+  height: auto;
+  margin-left: 0.5rem;
+  margin-right: 1rem;
+}
+
+html body header.site-header .language-switcher .trp-language-switcher {
+  width: auto;
+  height: auto;
+}
+
+html
+  body
+  .language-switcher
+  .trp-language-switcher
+  .trp-ls-shortcode-current-language {
+  width: initial !important;
+  padding: 0;
+  background-image: initial;
+  background-color: rgba(0, 0, 0, 0);
+  border-color: #fff;
+}
+
+html body .trp-language-switcher:hover .trp-ls-shortcode-language {
+  padding: 0;
+  width: initial !important;
+}
+
+html
+  body.body-scrolled
+  .language-switcher
+  .trp-language-switcher
+  .trp-ls-shortcode-current-language {
+  border-color: #444;
+}
+
+/* FIX Setinha */
+
+html body .trp-language-switcher > div > a {
+  padding: 7px 2rem 7px 12px;
+  position: relative;
+}
+
+html body .trp-language-switcher .trp-ls-shortcode-current-language a:after,
+html body .trp-language-switcher .trp-ls-shortcode-current-language a:before {
+  content: "";
+  position: absolute;
+  background-color: #fff;
+  width: 10px;
+  height: 1px;
+  top: 13.5px;
+  right: 6px;
+}
+
+html
+  body.body-scrolled
+  .trp-language-switcher
+  .trp-ls-shortcode-current-language
+  a:after,
+html
+  body.body-scrolled
+  .trp-language-switcher
+  .trp-ls-shortcode-current-language
+  a:before {
+  background-color: #444;
+}
+
+html body .trp-language-switcher .trp-ls-shortcode-current-language a:before {
+  transform: rotate(45deg);
+  right: 13px;
+}
+
+html body .trp-language-switcher .trp-ls-shortcode-current-language a:after {
+  transform: rotate(-45deg);
+}
