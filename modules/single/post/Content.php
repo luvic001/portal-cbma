@@ -74,7 +74,7 @@ $category = get_the_category();
         <?php endif; ?>
 
         <div class="editor-content editor-content-painel">
-          <?= get_the_content() ?>
+          <?= wpautop(get_the_content()) ?>
         </div>
 
       </div>
