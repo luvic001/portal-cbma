@@ -11,6 +11,9 @@ global $sitename;
   <div class="container">
 
     <div class="row">
+      
+      <?php get_modules("Footer/Content-partnership") ?>
+      
       <div class="col-md-6">
 
         <div class="footer-contents">

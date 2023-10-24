@@ -131,3 +131,20 @@ $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, $settin
   'section' => 'popup-entrada',
   'settings' => $setting_name,
 ]));
+
+// Parcerias ==============================
+$wp_customize->add_section('footer-partnership', [
+  'title' => 'Parcerias',
+  'panel' => $panel_name
+]);
+
+for ($i = 0; $i < 4; $i++) {
+  $setting_name = sprintf('partnership-%s', $i);
+  $wp_customize->add_setting($setting_name);
+  $wp_customize->add_control(new WP_Customize_Media_Control($wp_customize, $setting_name, [
+    'label' => sprintf('Parceiro %s', $i+1),
+    'section' => 'footer-partnership',
+    'settings' => $setting_name,
+    'description' => ''
+  ]));
+}
