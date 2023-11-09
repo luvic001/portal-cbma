@@ -3,7 +3,7 @@
 if (!defined("PATH")) exit;
 
 $ind = 0;
-for ($i = 0; $i < 4; $i++) {
+for ($i = 0; $i < 10; $i++) {
   $setting = get_theme_mod(sprintf('partnership-%s', $i));
   if ($setting) {
     $partners[] = wpfx_get_image($setting);
@@ -20,7 +20,7 @@ if ($ind > 0) {
       <h2>Parcerias</h2>
       <div class="row align-items-center">
         <?php foreach ($partners as $partner) { ?>
-          <div class="col-md-3 col-6">
+          <div class="col-md-2 col-6">
             <figure class="is-relative">
               <img class="w-100" src="<?= /** hey */ $partner ?>" alt="Parceiro <?= $i+1 ?>">
             </figure>

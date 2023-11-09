@@ -138,7 +138,7 @@ $wp_customize->add_section('footer-partnership', [
   'panel' => $panel_name
 ]);
 
-for ($i = 0; $i < 4; $i++) {
+for ($i = 0; $i < 10; $i++) {
   $setting_name = sprintf('partnership-%s', $i);
   $wp_customize->add_setting($setting_name);
   $wp_customize->add_control(new WP_Customize_Media_Control($wp_customize, $setting_name, [
